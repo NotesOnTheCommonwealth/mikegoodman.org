@@ -209,7 +209,7 @@ cv_body = f"""
 # ---------- Publications ----------
 pubs_body = f"""
 <h2 class="sec">Publications</h2>
-<p class="sec-sub">Peer-reviewed articles, book chapters, applied research reports, and public commentary. Entries marked <span class="pdfbtn" style="cursor:default">PDF</span> link to the full document.</p>
+<p class="sec-sub">Peer-reviewed articles, book chapters, applied research reports, and public commentary. Entries link to the full document (<span class="pdfbtn" style="cursor:default">PDF</span>) or to the article on the publisher’s site.</p>
 <section class="cvsec">
   <h3>Journal Articles</h3>
   <p class="count">{len(D["journal_articles"])} peer-reviewed articles, 1993–2026</p>
