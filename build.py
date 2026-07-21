@@ -124,7 +124,6 @@ cv_body = f"""
   <h2 class="sec">Curriculum Vitae</h2>
   <span><a class="btn" href="cv.html" onclick="window.print();return false;">Print / Save PDF</a></span>
 </div>
-<p class="sec-sub">Complete and current as of July 2026. Long sections open with their most recent entries — select “Show all” to expand. Publications and media appearances have their own pages.</p>
 <div class="cv-grid">
   <nav class="cv-side">
     <a href="#edu">Education</a>
