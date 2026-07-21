@@ -1,0 +1,72 @@
+:root{
+  --bg:#FAFAF8; --surface:#FFFFFF; --ink:#22262B; --muted:#6B7075;
+  --accent:#6E2B2B; --accent-ink:#5E2424; --line:#E3E1DC; --rule:#22262B;
+  --chip:#F0EFEB;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#14161A; --surface:#1B1E23; --ink:#E7E7E4; --muted:#9BA0A6;
+    --accent:#C48A8A; --accent-ink:#D4A3A3; --line:#2C3036; --rule:#C9CBCE;
+    --chip:#23262C;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.sans{font-family:Seravek,"Avenir Next","Helvetica Neue",-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent-ink)}
+.masthead{max-width:880px;margin:0 auto;padding:2.6rem 1.25rem 0;text-align:center}
+.masthead h1{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:600;letter-spacing:.015em;margin:0 0 .3rem}
+.masthead h1 a{color:var(--ink);text-decoration:none}
+.masthead .role{font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 1.4rem}
+.rule2{max-width:880px;margin:0 auto;border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);height:4px}
+nav.mainnav{max-width:880px;margin:0 auto;padding:.75rem 1.25rem;display:flex;justify-content:center;gap:.4rem;flex-wrap:wrap;position:sticky;top:0;background:var(--bg);z-index:40;border-bottom:1px solid var(--line)}
+nav.mainnav a{font-family:Seravek,"Avenir Next",sans-serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding:.35rem .7rem}
+nav.mainnav a:hover{color:var(--ink)}
+nav.mainnav a.active{color:var(--accent-ink);border-bottom:2px solid var(--accent)}
+.page{max-width:880px;margin:0 auto;padding:2.2rem 1.25rem 4rem}
+h2.sec{font-size:1.35rem;font-weight:600;margin:2.2rem 0 .3rem;font-variant:small-caps;letter-spacing:.04em}
+h2.sec:first-child{margin-top:.4rem}
+p.sec-sub{color:var(--muted);margin:0 0 1.1rem;font-size:.9rem;font-family:Seravek,"Avenir Next",sans-serif}
+.about-grid{display:grid;grid-template-columns:1fr 230px;gap:2.4rem;align-items:start}
+.headshot{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}
+.sidecard{font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;color:var(--muted);margin-top:.9rem;line-height:1.6}
+.sidecard b{color:var(--ink)}
+.worklist{list-style:none;margin:0;padding:0}
+.worklist li{padding:.7rem 0;border-bottom:1px solid var(--line)}
+.worklist .w-venue{font-style:italic;color:var(--muted)}
+.worklist .w-note{font-family:Seravek,"Avenir Next",sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+ul.entries{list-style:none;margin:0;padding:0}
+ul.entries li{padding:.55rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:5.4rem 1fr;gap:1.1rem;font-size:.95rem}
+ul.entries li .yr{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;padding-top:.12rem}
+ul.entries.wide li{grid-template-columns:7.5rem 1fr}
+.venue{color:var(--muted);font-style:italic}
+ul.entries li.hid{display:none}
+.pdfbtn{display:inline-block;font-family:Seravek,"Avenir Next",sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.06em;border:1px solid var(--accent);color:var(--accent-ink);border-radius:3px;padding:.05rem .45rem;margin-left:.5rem;text-decoration:none;vertical-align:2px}
+.pdfbtn:hover{background:var(--chip)}
+.showmore{margin:.8rem 0 0;background:none;border:none;color:var(--accent-ink);font-weight:600;font-size:.85rem;font-family:Seravek,"Avenir Next",sans-serif;padding:.2rem 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+section.cvsec{margin-bottom:2.3rem}
+section.cvsec h3{font-size:1.15rem;margin:0 0 .15rem;font-variant:small-caps;letter-spacing:.04em}
+section.cvsec .count{font-size:.82rem;color:var(--muted);margin:0 0 .8rem;font-family:Seravek,"Avenir Next",sans-serif}
+.cv-grid{display:grid;grid-template-columns:185px 1fr;gap:2.4rem;align-items:start}
+.cv-side{position:sticky;top:3.4rem;font-size:.84rem;font-family:Seravek,"Avenir Next",sans-serif}
+.cv-side a{display:block;padding:.3rem 0;color:var(--muted);text-decoration:none}
+.cv-side a:hover{color:var(--ink)}
+.cv-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem}
+.btn{display:inline-block;padding:.5rem 1rem;border:1px solid var(--accent);border-radius:3px;font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;font-weight:600;color:var(--accent-ink);text-decoration:none;cursor:pointer;background:none}
+.btn:hover{background:var(--chip)}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1.1rem}
+.chip{background:none;border:1px solid var(--line);border-radius:999px;padding:.26rem .8rem;font-size:.8rem;cursor:pointer;color:var(--muted);font-family:Seravek,"Avenir Next",sans-serif}
+.chip.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;text-align:center;padding:1.4rem;margin-top:2rem;font-family:Seravek,"Avenir Next",sans-serif}
+@media(max-width:700px){
+  .about-grid,.cv-grid{grid-template-columns:1fr}
+  .about-grid .aside{order:-1;max-width:200px}
+  .cv-side{position:static;display:flex;flex-wrap:wrap;gap:.9rem}
+}
+@media print{
+  nav.mainnav,.showmore,.pdfbtn,.btn{display:none !important}
+  ul.entries li.hid{display:grid !important}
+  body{font-size:11pt}
+}
