@@ -278,7 +278,7 @@ contact_body = """
 University of Massachusetts Dartmouth<br>
 285 Old Westport Road, Dartmouth, MA 02747</p>
 <p><a href="mailto:mgoodman@umassd.edu">mgoodman@umassd.edu</a> &middot; 617.823.2770</p>
-<p><a href="https://www.linkedin.com/in/drmikegoodman/">LinkedIn</a> &middot; <a href="https://x.com/Mike_Goodman">X</a></p>
+<p><a href="https://www.linkedin.com/in/drmikegoodman/">LinkedIn</a> &middot; <a href="https://x.com/Mike_Goodman">X</a> &middot; <a href="https://commonwealthnotes.substack.com">Substack</a></p>
 <p class="sec-sub">For media queries, speaking requests, board and advisory inquiries, and research collaboration.</p>"""
 
 PAGES = {
