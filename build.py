@@ -5,10 +5,16 @@ Reads data/*.json, writes finished HTML pages into _site/.
 No dependencies beyond the Python standard library.
 Run:  python3 build.py
 """
-import json, os, shutil, html, re
+import json, os, shutil, html, re, hashlib
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "_site")
+
+def asset_v(name):
+    with open(os.path.join(ROOT, "assets", name), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+CSS_V = asset_v("style.css")
+JS_V = asset_v("site.js")
 
 def load(name):
     with open(os.path.join(ROOT, "data", name + ".json")) as f:
@@ -55,7 +61,7 @@ def shell(active, title, body, desc):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={CSS_V}">
 </head>
 <body>
 <div class="masthead">
@@ -70,7 +76,7 @@ def shell(active, title, body, desc):
 {body}
 </main>
 <footer>&copy; 2026 Michael D. Goodman &middot; mikegoodman.org</footer>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v={JS_V}"></script>
 </body>
 </html>"""
 
