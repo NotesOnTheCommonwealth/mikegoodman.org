@@ -111,12 +111,6 @@ about_body = f"""
     <p>An economic sociologist by training (Ph.D., Boston University), his research and commentary focus on economic development, housing, coastal resilience, and the workforce challenges facing Massachusetts and New England. His work has been supported by more than $13.8 million in external funding, and his analysis has been cited in more than 680 print, radio, and television stories since 2002.</p>
     <p>At UMass Dartmouth he has served as Acting Provost &amp; Vice Chancellor for Academic Affairs, Senior Advisor to the Chancellor for Economic Development &amp; Strategic Initiatives, and Executive Director of Economic Development &amp; Community Partnerships. He previously directed the university's Public Policy Center and chaired the Department of Public Policy.</p>
     <p>He serves as a Public Director of the Depositors Insurance Fund, on the Advisory Board of the Federal Reserve Bank of Boston's New England Public Policy Center, and the Board of Economic Advisors of Associated Industries of Massachusetts, and — by gubernatorial appointment across three administrations — on the Commonwealth's Economic Assistance Coordinating Council.</p>
-    <h2 class="sec">Selected Recent Work</h2>
-    <ul class="worklist">
-      <li><span class="w-note">In press · 2026</span><br>“Advancing the North Shore Blue Economy Initiative,” <span class="w-venue">The Northeastern Geographer</span> (with K. Kahl and D. Borges)</li>
-      <li><span class="w-note">Funded initiative · 2024–26</span><br>Blue Economy Initiatives, Massachusetts Division of Marine Fisheries ($8.0M)</li>
-      <li><span class="w-note">Commentary · 2025</span><br>Analysis featured in <span class="w-venue">CommonWealth Beacon</span> coverage of the Commonwealth's November economic check-in</li>
-    </ul>
     <h2 class="sec">Notes on the Commonwealth</h2>
     <p class="sec-sub">Periodic commentary on the people, places, public affairs, and economy of Massachusetts — <a href="https://commonwealthnotes.substack.com">subscribe on Substack</a>.</p>
     <ul class="worklist">
@@ -124,7 +118,7 @@ about_body = f"""
     f'      <li><span class="w-note">{p["date"]}</span><br><a href="{p["link"]}">{html.escape(p["title"], quote=False)}</a>'
     + (f' — <span class="w-venue">{html.escape(p["subtitle"], quote=False)}</span>' if p["subtitle"] else "")
     + "</li>"
-    for p in SUBSTACK["posts"][:3]) + """
+    for p in SUBSTACK["posts"][:5]) + """
     </ul>
   </div>
   <div class="aside">
