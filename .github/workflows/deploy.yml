@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "0 11 * * 1"  # weekly Monday rebuild so the Substack post list stays current
 
 permissions:
   contents: read

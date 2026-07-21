@@ -25,6 +25,29 @@ D = {n: load(n) for n in ["education","experience","awards","journal_articles",
      "university_service","service"]}
 PDFMAP = load("pdfmap")
 
+def fetch_substack():
+    """Refresh data/substack.json from the live feed; fall back to the committed cache."""
+    try:
+        import urllib.request, xml.etree.ElementTree as ET, email.utils
+        req = urllib.request.Request("https://commonwealthnotes.substack.com/feed",
+                                     headers={"User-Agent": "mikegoodman.org site build"})
+        root = ET.fromstring(urllib.request.urlopen(req, timeout=10).read())
+        posts = []
+        for item in root.find("channel").findall("item")[:5]:
+            d = email.utils.parsedate_to_datetime(item.findtext("pubDate"))
+            posts.append({"title": item.findtext("title"),
+                          "subtitle": (item.findtext("description") or "").strip(),
+                          "date": d.strftime("%B %-d, %Y"),
+                          "link": item.findtext("link")})
+        if posts:
+            with open(os.path.join(ROOT, "data", "substack.json"), "w") as f:
+                json.dump({"posts": posts}, f, indent=1, ensure_ascii=False)
+    except Exception as e:
+        print("substack feed unavailable, using cached copy:", e)
+    return load("substack")
+
+SUBSTACK = fetch_substack()
+
 def esc(s): return html.escape(s, quote=False)
 
 def pdf_for(section, text):
@@ -93,6 +116,15 @@ about_body = f"""
       <li><span class="w-note">In press · 2026</span><br>“Advancing the North Shore Blue Economy Initiative,” <span class="w-venue">The Northeastern Geographer</span> (with K. Kahl and D. Borges)</li>
       <li><span class="w-note">Funded initiative · 2024–26</span><br>Blue Economy Initiatives, Massachusetts Division of Marine Fisheries ($8.0M)</li>
       <li><span class="w-note">Commentary · 2025</span><br>Analysis featured in <span class="w-venue">CommonWealth Beacon</span> coverage of the Commonwealth's November economic check-in</li>
+    </ul>
+    <h2 class="sec">Notes on the Commonwealth</h2>
+    <p class="sec-sub">Periodic commentary on the people, places, public affairs, and economy of Massachusetts — <a href="https://commonwealthnotes.substack.com">subscribe on Substack</a>.</p>
+    <ul class="worklist">
+""" + "\n".join(
+    f'      <li><span class="w-note">{p["date"]}</span><br><a href="{p["link"]}">{html.escape(p["title"], quote=False)}</a>'
+    + (f' — <span class="w-venue">{html.escape(p["subtitle"], quote=False)}</span>' if p["subtitle"] else "")
+    + "</li>"
+    for p in SUBSTACK["posts"][:3]) + """
     </ul>
   </div>
   <div class="aside">
@@ -237,6 +269,7 @@ contact_body = """
 University of Massachusetts Dartmouth<br>
 285 Old Westport Road, Dartmouth, MA 02747</p>
 <p><a href="mailto:mgoodman@umassd.edu">mgoodman@umassd.edu</a> &middot; 617.823.2770</p>
+<p><a href="https://commonwealthnotes.substack.com">Notes on the Commonwealth</a> — his Substack newsletter on the people, places, public affairs, and economy of Massachusetts.</p>
 <p class="sec-sub">For media queries, speaking requests, board and advisory inquiries, and research collaboration.</p>"""
 
 PAGES = {
