@@ -24,6 +24,7 @@ D = {n: load(n) for n in ["education","experience","awards","journal_articles",
      "book_chapters","reports","opeds","grants","media","talks",
      "university_service","service"]}
 PDFMAP = load("pdfmap")
+LINKMAP = load("linkmap")
 
 def fetch_substack():
     """Refresh data/substack.json from the live feed; fall back to the committed cache."""
@@ -56,10 +57,21 @@ def pdf_for(section, text):
             return path
     return None
 
+def link_for(section, text):
+    for needle, url, label in LINKMAP.get(section, []):
+        if needle.lower() in text.lower():
+            return url, label
+    return None
+
 def entry_li(label, text, section=None, wide=False):
     body = esc(text)
+    btn = ""
     pdf = pdf_for(section, text) if section else None
-    btn = f' <a class="pdfbtn" href="{pdf}">PDF</a>' if pdf else ""
+    if pdf:
+        btn += f' <a class="pdfbtn" href="{pdf}">PDF</a>'
+    link = link_for(section, text) if section else None
+    if link:
+        btn += f' <a class="pdfbtn" href="{link[0]}">{link[1]}</a>'
     return f'<li><span class="yr">{esc(label)}</span><span class="t">{body}{btn}</span></li>'
 
 def entries(items, section=None, first=None, wide=False, label_key="label", text_key="text"):
