@@ -156,7 +156,7 @@ cv_body = f"""
     </section>
     <section class="cvsec" id="uniservice">
       <h3>University Service</h3>
-      <ul class="entries" data-first="8">
+      <ul class="entries plain" data-first="8">
         {uni}
       </ul>
     </section>

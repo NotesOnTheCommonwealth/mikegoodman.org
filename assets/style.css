@@ -41,6 +41,7 @@ ul.entries{list-style:none;margin:0;padding:0}
 ul.entries li{padding:.55rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:5.4rem 1fr;gap:1.1rem;font-size:.95rem}
 ul.entries li .yr{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;padding-top:.12rem}
 ul.entries.wide li{grid-template-columns:7.5rem 1fr}
+ul.entries.plain li{display:block}
 .venue{color:var(--muted);font-style:italic}
 ul.entries li.hid{display:none}
 .pdfbtn{display:inline-block;font-family:Seravek,"Avenir Next",sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.06em;border:1px solid var(--accent);color:var(--accent-ink);border-radius:3px;padding:.05rem .45rem;margin-left:.5rem;text-decoration:none;vertical-align:2px}
