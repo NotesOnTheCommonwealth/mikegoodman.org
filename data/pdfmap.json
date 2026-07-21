@@ -1,36 +1,124 @@
 {
-  "journal_articles": [
-    ["New Housing Production", "pubs/2019-new-housing-production-massbenchmarks.pdf"],
-    ["Time of Transition", "pubs/2014-economy-time-of-transition-massbenchmarks.pdf"],
-    ["Whither the Recovery", "pubs/2013-whither-the-recovery-massbenchmarks.pdf"],
-    ["Politics and Globalization", "pubs/2012-politics-globalization-uncertainty-massbenchmarks.pdf"],
-    ["Diverging Destinies", "pubs/2011-diverging-destinies-massbenchmarks.pdf"],
-    ["Feast or Famine", "pubs/2011-feast-or-famine-economy-massbenchmarks.pdf"],
-    ["Long Slog", "pubs/2010-outlook-long-slog-ahead-massbenchmarks.pdf"],
-    ["front lines of the 21st century economy", "pubs/2012-job-opportunities-mass-it-industry.pdf"],
-    ["Financial Education in New Bedford", "pubs/2012-financial-education-new-bedford.pdf"]
+ "journal_articles": [
+  [
+   "New Housing Production",
+   "pubs/2019-new-housing-production-massbenchmarks.pdf"
   ],
-  "reports": [
-    ["Economic Geography of SouthCoastal", "pubs/2019-economic-geography-southcoastal-ne.pdf"],
-    ["Transforming Quincy", "pubs/2019-transforming-quincy-economic-assessment.pdf"],
-    ["Health Through Human Services", "pubs/2019-health-through-human-services.pdf"],
-    ["Face of the Human Services", "pubs/2018-face-of-human-services-sector.pdf"],
-    ["Provincetown MA", "pubs/2018-provincetown-housing-needs.pdf"],
-    ["Vineyard Wind Offshore Wind Developments", "pubs/2018-vineyard-wind-economic-workforce-implications.pdf"],
-    ["Navigating the Global Economy", "pubs/2017-massachusetts-maritime-economy.pdf"],
-    ["Costs and Hidden Benefits", "pubs/2016-costs-hidden-benefits-housing-development.pdf"],
-    ["Evidence Based Housing Policy in Fall River", "pubs/2016-evidence-based-housing-policy-fall-river.pdf"],
-    ["Beyond Social Value", "pubs/2015-beyond-social-value-human-services.pdf"],
-    ["Foreign-Born Population of Worcester", "pubs/2015-foreign-born-worcester.pdf"],
-    ["Subsidizing Risk", "pubs/2015-subsidizing-risk-flood-insurance.pdf"],
-    ["Between a Rock and a Hard Place", "pubs/2014-credit-union-industry-2013-rock-hard-place.pdf"],
-    ["Eye of the Storm", "pubs/2013-credit-union-industry-2012-eye-of-storm.pdf"],
-    ["Uncertain Environment", "pubs/2012-credit-union-industry-uncertain-environment.pdf"],
-    ["Educational Collaboration in Berkshire", "pubs/2012-educational-collaboration-berkshire-county.pdf"],
-    ["Foundation for Growth", "pubs/2009-foundation-for-growth-housing-employment-2020.pdf"],
-    ["Hub of the Massachusetts Economy", "pubs/2009-it-industry-hub-of-mass-economy.pdf"]
+  [
+   "Time of Transition",
+   "pubs/2014-economy-time-of-transition-massbenchmarks.pdf"
   ],
-  "opeds": [
-    ["coastal property owners beware", "pubs/2020-coastal-property-owners-beware-commonwealth.pdf"]
+  [
+   "Whither the Recovery",
+   "pubs/2013-whither-the-recovery-massbenchmarks.pdf"
+  ],
+  [
+   "Politics and Globalization",
+   "pubs/2012-politics-globalization-uncertainty-massbenchmarks.pdf"
+  ],
+  [
+   "Diverging Destinies",
+   "pubs/2011-diverging-destinies-massbenchmarks.pdf"
+  ],
+  [
+   "Feast or Famine",
+   "pubs/2011-feast-or-famine-economy-massbenchmarks.pdf"
+  ],
+  [
+   "Long Slog",
+   "pubs/2010-outlook-long-slog-ahead-massbenchmarks.pdf"
+  ],
+  [
+   "front lines of the 21st century economy",
+   "pubs/2012-job-opportunities-mass-it-industry.pdf"
+  ],
+  [
+   "Financial Education in New Bedford",
+   "pubs/2012-financial-education-new-bedford.pdf"
   ]
+ ],
+ "reports": [
+  [
+   "Harvesting Tradition",
+   "pubs/2023-cranberry-workforce-harvesting-tradition.pdf"
+  ],
+  [
+   "Economic Geography of SouthCoastal",
+   "pubs/2019-economic-geography-southcoastal-ne.pdf"
+  ],
+  [
+   "Transforming Quincy",
+   "pubs/2019-transforming-quincy-economic-assessment.pdf"
+  ],
+  [
+   "Health Through Human Services",
+   "pubs/2019-health-through-human-services.pdf"
+  ],
+  [
+   "Face of the Human Services",
+   "pubs/2018-face-of-human-services-sector.pdf"
+  ],
+  [
+   "Provincetown MA",
+   "pubs/2018-provincetown-housing-needs.pdf"
+  ],
+  [
+   "Vineyard Wind Offshore Wind Developments",
+   "pubs/2018-vineyard-wind-economic-workforce-implications.pdf"
+  ],
+  [
+   "Navigating the Global Economy",
+   "pubs/2017-massachusetts-maritime-economy.pdf"
+  ],
+  [
+   "Costs and Hidden Benefits",
+   "pubs/2016-costs-hidden-benefits-housing-development.pdf"
+  ],
+  [
+   "Evidence Based Housing Policy in Fall River",
+   "pubs/2016-evidence-based-housing-policy-fall-river.pdf"
+  ],
+  [
+   "Beyond Social Value",
+   "pubs/2015-beyond-social-value-human-services.pdf"
+  ],
+  [
+   "Foreign-Born Population of Worcester",
+   "pubs/2015-foreign-born-worcester.pdf"
+  ],
+  [
+   "Subsidizing Risk",
+   "pubs/2015-subsidizing-risk-flood-insurance.pdf"
+  ],
+  [
+   "Between a Rock and a Hard Place",
+   "pubs/2014-credit-union-industry-2013-rock-hard-place.pdf"
+  ],
+  [
+   "Eye of the Storm",
+   "pubs/2013-credit-union-industry-2012-eye-of-storm.pdf"
+  ],
+  [
+   "Uncertain Environment",
+   "pubs/2012-credit-union-industry-uncertain-environment.pdf"
+  ],
+  [
+   "Educational Collaboration in Berkshire",
+   "pubs/2012-educational-collaboration-berkshire-county.pdf"
+  ],
+  [
+   "Foundation for Growth",
+   "pubs/2009-foundation-for-growth-housing-employment-2020.pdf"
+  ],
+  [
+   "Hub of the Massachusetts Economy",
+   "pubs/2009-it-industry-hub-of-mass-economy.pdf"
+  ]
+ ],
+ "opeds": [
+  [
+   "coastal property owners beware",
+   "pubs/2020-coastal-property-owners-beware-commonwealth.pdf"
+  ]
+ ]
 }
