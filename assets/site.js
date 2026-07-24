@@ -1,6 +1,8 @@
 // Progressive disclosure: lists with data-first="N" show N entries + a Show all button.
+var listSeq = 0;
 document.querySelectorAll('ul.entries[data-first]').forEach(function(ul){
   var n = parseInt(ul.dataset.first, 10);
+  if (!ul.id) ul.id = 'entrylist-' + (++listSeq);
   var items = Array.prototype.slice.call(ul.children);
   if (items.length <= n) return;
   items.slice(n).forEach(function(li){ li.classList.add('hid'); });
@@ -9,6 +11,7 @@ document.querySelectorAll('ul.entries[data-first]').forEach(function(ul){
   var label = 'Show all ' + items.length + ' →';
   btn.textContent = label;
   btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-controls', ul.id);
   ul.parentElement.insertBefore(btn, ul.nextSibling);
   btn.addEventListener('click', function(){
     if (ul.querySelector('.hid')) {

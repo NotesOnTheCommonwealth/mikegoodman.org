@@ -86,11 +86,25 @@ NAV = [("index.html","About"),("cv.html","Curriculum Vitae"),
        ("publications.html","Publications"),("media.html","In the Media"),
        ("service.html","Public & Board Service"),("contact.html","Contact")]
 
-def shell(active, title, body, desc):
+SITE = "https://www.mikegoodman.org"
+
+JSONLD = """<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Michael D. Goodman",
+"honorificSuffix":"Ph.D.","jobTitle":"Professor of Public Policy",
+"worksFor":{"@type":"CollegeOrUniversity","name":"University of Massachusetts Dartmouth"},
+"alumniOf":{"@type":"CollegeOrUniversity","name":"Boston University"},
+"url":"https://www.mikegoodman.org/",
+"image":"https://www.mikegoodman.org/assets/headshot.jpg",
+"sameAs":["https://www.linkedin.com/in/drmikegoodman/","https://commonwealthnotes.substack.com"]}
+</script>"""
+
+def shell(active, title, body, desc, name_is_h1=False):
     ACT = ' class="active"'
     nav = "\n".join(
         f'<a href="{href}"{ACT if href==active else ""}>{label}</a>'
         for href, label in NAV)
+    canon = SITE + "/" + ("" if active == "index.html" else active)
+    name_tag = ("h1" if name_is_h1 else "p")
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,15 +113,29 @@ def shell(active, title, body, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="color-scheme" content="light dark">
+<link rel="canonical" href="{canon}">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Michael D. Goodman, Ph.D.">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{canon}">
+<meta property="og:image" content="{SITE}/assets/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{SITE}/assets/headshot.jpg">
+{JSONLD}
 <link rel="stylesheet" href="assets/style.css?v={CSS_V}">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="masthead">
-  <h1><a href="index.html">Michael D. Goodman, Ph.D.</a></h1>
+<header class="masthead">
+  <{name_tag} class="mastname"><a href="index.html">Michael D. Goodman, Ph.D.</a></{name_tag}>
   <p class="role">Professor of Public Policy &middot; University of Massachusetts Dartmouth</p>
-</div>
-<div class="rule2"></div>
+</header>
+<div class="rule2" aria-hidden="true"></div>
 <nav class="mainnav" aria-label="Primary">
 {nav}
 </nav>
@@ -138,16 +166,15 @@ about_body = f"""
     </ul>
   </div>
   <div class="aside">
-    <img class="headshot" src="assets/headshot.jpg?v={HS_V}" alt="Michael D. Goodman">
+    <img class="headshot" src="assets/headshot.jpg?v={HS_V}" alt="Michael D. Goodman" width="600" height="800">
     <div class="sidecard">
       <b>Department of Public Policy</b><br>
       University of Massachusetts Dartmouth<br>
       285 Old Westport Road<br>
       Dartmouth, MA 02747<br><br>
       <a href="mailto:mgoodman@umassd.edu">mgoodman@umassd.edu</a><br>
-      617.823.2770<br><br>
+      508.999.8788<br><br>
       <a href="https://www.linkedin.com/in/drmikegoodman/">LinkedIn</a> &middot;
-      <a href="https://x.com/Mike_Goodman">X</a> &middot;
       <a href="https://commonwealthnotes.substack.com">Substack</a>
     </div>
   </div>
@@ -166,7 +193,7 @@ grants = D["grants"]
 uni = "\n".join(f"<li>{esc(x)}</li>" for x in D["university_service"])
 cv_body = f"""
 <div class="cv-head">
-  <h2 class="sec">Curriculum Vitae</h2>
+  <h1 class="sec">Curriculum Vitae</h1>
   <span><a class="btn" href="MichaelGoodman-CV.pdf">Download CV (PDF)</a></span>
 </div>
 <div class="cv-grid">
@@ -183,29 +210,29 @@ cv_body = f"""
   </nav>
   <div>
     <section class="cvsec" id="edu">
-      <h3>Education</h3>
+      <h2 class="subsec">Education</h2>
       {entries(D["education"])}
     </section>
     <section class="cvsec" id="exp">
-      <h3>Professional Experience</h3>
+      <h2 class="subsec">Professional Experience</h2>
       {exp_html}
     </section>
     <section class="cvsec" id="awards">
-      <h3>Awards &amp; Honors</h3>
+      <h2 class="subsec">Awards &amp; Honors</h2>
       {entries(D["awards"])}
     </section>
     <section class="cvsec" id="grants">
-      <h3>Grants &amp; Contract Funding</h3>
+      <h2 class="subsec">Grants &amp; Contract Funding</h2>
       <p class="count">{esc(grants["total"])} in external funding as principal or co-principal investigator</p>
       {entries(grants["items"], first=8, wide=True)}
     </section>
     <section class="cvsec" id="talks">
-      <h3>Invited Talks &amp; Presentations</h3>
+      <h2 class="subsec">Invited Talks &amp; Presentations</h2>
       <p class="count">{len(D["talks"])} invited talks, keynotes, and testimony since 2002</p>
       {entries(D["talks"], first=10, label_key="date")}
     </section>
     <section class="cvsec" id="uniservice">
-      <h3>University Service</h3>
+      <h2 class="subsec">University Service</h2>
       <ul class="entries plain" data-first="8">
         {uni}
       </ul>
@@ -215,24 +242,24 @@ cv_body = f"""
 
 # ---------- Publications ----------
 pubs_body = f"""
-<h2 class="sec">Publications</h2>
+<h1 class="sec">Publications</h1>
 <p class="sec-sub">Peer reviewed and professional publications.</p>
 <section class="cvsec">
-  <h3>Journal Articles</h3>
+  <h2 class="subsec">Journal Articles</h2>
   <p class="count">{len(D["journal_articles"])} articles, 1993–2026</p>
   {entries(D["journal_articles"], section="journal_articles", first=7)}
 </section>
 <section class="cvsec">
-  <h3>Book Chapters</h3>
+  <h2 class="subsec">Book Chapters</h2>
   {entries(D["book_chapters"], section="book_chapters")}
 </section>
 <section class="cvsec">
-  <h3>Applied Research Reports</h3>
+  <h2 class="subsec">Applied Research Reports</h2>
   <p class="count">{len(D["reports"])} reports for federal and state agencies, municipalities, foundations, and industry</p>
   {entries(D["reports"], section="reports", first=8)}
 </section>
 <section class="cvsec">
-  <h3>Opinion Pieces</h3>
+  <h2 class="subsec">Opinion Pieces</h2>
   <p class="count">{len(D["opeds"])} op-eds in the Boston Globe, CommonWealth, and regional papers</p>
   {entries(D["opeds"], section="opeds", first=6)}
 </section>"""
@@ -240,13 +267,13 @@ pubs_body = f"""
 # ---------- Media ----------
 media = D["media"]
 years = sorted({i["year"] for i in media["items"] if i["year"]}, reverse=True)
-chip_html = '<button class="chip on" data-yr="all">All</button>' + "".join(
-    f'<button class="chip" data-yr="{y}">{y}</button>' for y in years)
+chip_html = '<button class="chip on" data-yr="all" aria-pressed="true">All</button>' + "".join(
+    f'<button class="chip" data-yr="{y}" aria-pressed="false">{y}</button>' for y in years)
 media_lis = "\n".join(
     f'<li data-yr="{i["year"]}"><span class="yr">{i["year"]}</span><span class="t">{esc(i["text"])}</span></li>'
     for i in media["items"])
 media_body = f"""
-<h2 class="sec">In the Media</h2>
+<h1 class="sec">In the Media</h1>
 <p class="sec-sub">{re.sub(r"more than [0-9]+", str(MEDIA_COUNT), esc(media["intro"]), count=1)}</p>
 <div class="chips" id="yrchips" role="group" aria-label="Filter media appearances by year">{chip_html}</div>
 <ul class="entries" id="medialist" data-first="15">
@@ -259,35 +286,35 @@ def svc(pred):
 current = [s for s in D["service"] if s["label"].strip().endswith(("Present","–","-"))]
 past = [s for s in D["service"] if s not in current]
 service_body = f"""
-<h2 class="sec">Public &amp; Board Service</h2>
+<h1 class="sec">Public &amp; Board Service</h1>
 <p class="sec-sub">Advisory appointments, board service, and public engagement across government, civic, and financial institutions.</p>
 <section class="cvsec">
-  <h3>Standing Appointments</h3>
+  <h2 class="subsec">Standing Appointments</h2>
   {entries(current, wide=True)}
 </section>
 <section class="cvsec">
-  <h3>Past Board &amp; Advisory Service</h3>
+  <h2 class="subsec">Past Board &amp; Advisory Service</h2>
   {entries(past, wide=True)}
 </section>
 <section class="cvsec">
-  <h3>Testimony &amp; Board Briefings</h3>
+  <h2 class="subsec">Testimony &amp; Board Briefings</h2>
   <p>A regular invited witness at the Massachusetts Legislature's annual consensus revenue hearings, I also brief the boards of banks, chambers of commerce, and civic organizations on the economic outlook — in recent years including HarborOne Bank, Webster Bank, South Shore Bank, Bank Five, Reading Cooperative Bank, and the Society of Municipal Analysts.</p>
   <p>I welcome conversations about board and advisory service. <a href="contact.html">Contact</a></p>
 </section>"""
 
 # ---------- Contact ----------
 contact_body = """
-<h2 class="sec">Contact</h2>
+<h1 class="sec">Contact</h1>
 <p>Department of Public Policy<br>
 University of Massachusetts Dartmouth<br>
 285 Old Westport Road, Dartmouth, MA 02747</p>
-<p><a href="mailto:mgoodman@umassd.edu">mgoodman@umassd.edu</a> &middot; 617.823.2770</p>
-<p><a href="https://www.linkedin.com/in/drmikegoodman/">LinkedIn</a> &middot; <a href="https://x.com/Mike_Goodman">X</a> &middot; <a href="https://commonwealthnotes.substack.com">Substack</a></p>
+<p><a href="mailto:mgoodman@umassd.edu">mgoodman@umassd.edu</a> &middot; 508.999.8788</p>
+<p><a href="https://www.linkedin.com/in/drmikegoodman/">LinkedIn</a> &middot; <a href="https://commonwealthnotes.substack.com">Substack</a></p>
 <p class="sec-sub">For media queries, speaking requests, board and advisory inquiries, and research collaboration.</p>"""
 
 PAGES = {
  "index.html": ("index.html","Michael D. Goodman, Ph.D.",about_body,
-    "Michael D. Goodman, Professor of Public Policy at UMass Dartmouth — economic development, housing, and the Massachusetts economy."),
+    "Michael D. Goodman, Professor of Public Policy at UMass Dartmouth — economic development, housing, and the Massachusetts economy.", True),
  "cv.html": ("cv.html","Curriculum Vitae — Michael D. Goodman",cv_body,
     "Curriculum vitae of Michael D. Goodman, Professor of Public Policy, UMass Dartmouth."),
  "publications.html": ("publications.html","Publications — Michael D. Goodman",pubs_body,
@@ -325,11 +352,11 @@ NOTFOUND = """<!DOCTYPE html>
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-<div class="masthead">
+<header class="masthead">
   <h1><a href="/">Michael D. Goodman, Ph.D.</a></h1>
   <p class="role">Professor of Public Policy &middot; University of Massachusetts Dartmouth</p>
-</div>
-<div class="rule2"></div>
+</header>
+<div class="rule2" aria-hidden="true"></div>
 <main class="page" id="main">
   <h2 class="sec">Page Not Found</h2>
   <p>The page you were looking for isn't here — the site was recently redesigned. You may be looking for:</p>
@@ -346,9 +373,16 @@ def main():
             f.write(REDIRECT_TMPL.replace("{target}", target))
     with open(os.path.join(OUT, "404.html"), "w") as f:
         f.write(NOTFOUND)
-    for fname,(active,title,body,desc) in PAGES.items():
+    urls = "\n".join(f"<url><loc>{SITE}/{'' if p=='index.html' else p}</loc></url>" for p in PAGES)
+    with open(os.path.join(OUT, "sitemap.xml"), "w") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "\n</urlset>")
+    with open(os.path.join(OUT, "robots.txt"), "w") as f:
+        f.write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
+    for fname, page in PAGES.items():
+        active, title, body, desc = page[:4]
+        name_is_h1 = page[4] if len(page) > 4 else False
         with open(os.path.join(OUT,fname),"w") as f:
-            f.write(shell(active,title,body,desc))
+            f.write(shell(active,title,body,desc,name_is_h1))
     shutil.copytree(os.path.join(ROOT,"assets"), os.path.join(OUT,"assets"))
     shutil.copy2(os.path.join(ROOT,"MichaelGoodman-CV.pdf"), os.path.join(OUT,"MichaelGoodman-CV.pdf"))
     if os.path.isdir(os.path.join(ROOT,"pubs")):
