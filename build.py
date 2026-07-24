@@ -217,7 +217,7 @@ pubs_body = f"""
 <p class="sec-sub">Peer reviewed and professional publications.</p>
 <section class="cvsec">
   <h3>Journal Articles</h3>
-  <p class="count">{len(D["journal_articles"])} peer-reviewed articles, 1993–2026</p>
+  <p class="count">{len(D["journal_articles"])} articles, 1993–2026</p>
   {entries(D["journal_articles"], section="journal_articles", first=7)}
 </section>
 <section class="cvsec">
