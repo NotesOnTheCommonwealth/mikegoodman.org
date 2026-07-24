@@ -132,7 +132,7 @@ about_body = f"""
     f'      <li><span class="w-note">{p["date"]}</span><br><a href="{p["link"]}">{html.escape(p["title"], quote=False)}</a>'
     + (f' — <span class="w-venue">{html.escape(p["subtitle"], quote=False)}</span>' if p["subtitle"] else "")
     + "</li>"
-    for p in SUBSTACK["posts"][:5]) + """
+    for p in SUBSTACK["posts"][:5]) + f"""
     </ul>
   </div>
   <div class="aside">
