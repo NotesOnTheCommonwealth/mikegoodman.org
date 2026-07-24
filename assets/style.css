@@ -29,9 +29,9 @@ nav.mainnav a.active{color:var(--accent-ink);border-bottom:2px solid var(--accen
 h2.sec{font-size:1.35rem;font-weight:600;margin:2.2rem 0 .3rem;font-variant:small-caps;letter-spacing:.04em}
 h2.sec:first-child{margin-top:.4rem}
 p.sec-sub{color:var(--muted);margin:0 0 1.1rem;font-size:.9rem;font-family:Seravek,"Avenir Next",sans-serif}
-.about-grid{display:grid;grid-template-columns:1fr 230px;gap:2.4rem;align-items:start}
+.about-grid{display:grid;grid-template-columns:1fr 255px;gap:2.2rem;align-items:start}
 .headshot{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}
-.sidecard{font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;color:var(--muted);margin-top:.9rem;line-height:1.6}
+.sidecard{font-family:Seravek,"Avenir Next",sans-serif;font-size:.84rem;color:var(--muted);margin-top:.9rem;line-height:1.6}
 .sidecard b{color:var(--ink)}
 .worklist{list-style:none;margin:0;padding:0}
 .worklist li{padding:.7rem 0;border-bottom:1px solid var(--line)}
