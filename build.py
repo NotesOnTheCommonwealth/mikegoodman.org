@@ -15,6 +15,7 @@ def asset_v(name):
         return hashlib.md5(f.read()).hexdigest()[:8]
 CSS_V = asset_v("style.css")
 JS_V = asset_v("site.js")
+HS_V = asset_v("headshot.jpg")
 
 def load(name):
     with open(os.path.join(ROOT, "data", name + ".json")) as f:
@@ -135,7 +136,7 @@ about_body = f"""
     </ul>
   </div>
   <div class="aside">
-    <img class="headshot" src="assets/headshot.jpg" alt="Michael D. Goodman">
+    <img class="headshot" src="assets/headshot.jpg?v={HS_V}" alt="Michael D. Goodman">
     <div class="sidecard">
       <b>Department of Public Policy</b><br>
       University of Massachusetts Dartmouth<br>
