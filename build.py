@@ -268,8 +268,8 @@ service_body = f"""
 </section>
 <section class="cvsec">
   <h3>Testimony &amp; Board Briefings</h3>
-  <p>A regular invited witness at the Massachusetts Legislature's annual consensus revenue hearings, he also briefs the boards of banks, chambers of commerce, and civic organizations on the economic outlook — in recent years including HarborOne Bank, Webster Bank, South Shore Bank, Bank Five, Reading Cooperative Bank, and the Society of Municipal Analysts.</p>
-  <p>He welcomes conversations about board and advisory service. <a href="contact.html">Contact</a></p>
+  <p>A regular invited witness at the Massachusetts Legislature's annual consensus revenue hearings, I also brief the boards of banks, chambers of commerce, and civic organizations on the economic outlook — in recent years including HarborOne Bank, Webster Bank, South Shore Bank, Bank Five, Reading Cooperative Bank, and the Society of Municipal Analysts.</p>
+  <p>I welcome conversations about board and advisory service. <a href="contact.html">Contact</a></p>
 </section>"""
 
 # ---------- Contact ----------
