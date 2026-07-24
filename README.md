@@ -26,6 +26,18 @@ commit, and the site rebuilds itself in about a minute.
 Most entries look like: `{"label": "2026", "text": "“Title,” Venue, year (with Coauthor)."}`
 Copy an existing entry as a template and keep entries in reverse-chronological order.
 
+## Updating from a new CV version
+
+```
+python3 parse_cv.py ~/Downloads/CV_MichaelDGoodman_Comprehensive_XXXX.docx
+python3 build.py   # then commit and push
+```
+
+`parse_cv.py` regenerates all CV-derived data files; it does not touch
+`pdfmap.json`, `linkmap.json`, or `substack.json`. Counts shown on the site
+(media citations, invited talks, reports, articles) are always computed from
+the number of entries, so they can never drift out of sync.
+
 ## Attaching a PDF to an entry
 
 1. Add the file to `pubs/` named `year-short-title.pdf`.

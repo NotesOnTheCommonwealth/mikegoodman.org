@@ -48,6 +48,7 @@ def fetch_substack():
     return load("substack")
 
 SUBSTACK = fetch_substack()
+MEDIA_COUNT = len(D["media"]["items"])
 
 def esc(s): return html.escape(s, quote=False)
 
@@ -120,7 +121,7 @@ about_body = f"""
 <div class="about-grid">
   <div>
     <p style="margin-top:0">Michael D. Goodman is Professor of Public Policy at the University of Massachusetts Dartmouth and, since 2001, co-editor of <i>MassBenchmarks</i>, the journal of the Massachusetts economy published by the UMass Donahue Institute in collaboration with the Federal Reserve Bank of Boston.</p>
-    <p>An economic sociologist by training (Ph.D., Boston University), his research and commentary focus on economic development, housing, coastal resilience, and the workforce challenges facing Massachusetts and New England. His work has been supported by more than $13.8 million in external funding, and his analysis has been cited in more than 680 print, radio, and television stories since 2002.</p>
+    <p>An economic sociologist by training (Ph.D., Boston University), his research and commentary focus on economic development, housing, coastal resilience, and the workforce challenges facing Massachusetts and New England. His work has been supported by more than $13.8 million in external funding, and his analysis has been cited in {MEDIA_COUNT} documented print, radio, and television stories since 2002.</p>
     <p>At UMass Dartmouth he has served as Acting Provost &amp; Vice Chancellor for Academic Affairs, Senior Advisor to the Chancellor for Economic Development &amp; Strategic Initiatives, and Executive Director of Economic Development &amp; Community Partnerships. He previously directed the university's Public Policy Center and chaired the Department of Public Policy.</p>
     <p>He serves as a Public Director of the Depositors Insurance Fund, on the Advisory Board of the Federal Reserve Bank of Boston's New England Public Policy Center, and the Board of Economic Advisors of Associated Industries of Massachusetts, and — by gubernatorial appointment across three administrations — on the Commonwealth's Economic Assistance Coordinating Council.</p>
     <h2 class="sec">Notes on the Commonwealth</h2>
@@ -243,7 +244,7 @@ media_lis = "\n".join(
     for i in media["items"])
 media_body = f"""
 <h2 class="sec">In the Media</h2>
-<p class="sec-sub">{esc(media["intro"])}</p>
+<p class="sec-sub">{re.sub(r"more than [0-9]+", str(MEDIA_COUNT), esc(media["intro"]), count=1)}</p>
 <div class="chips" id="yrchips">{chip_html}</div>
 <ul class="entries" id="medialist" data-first="15">
 {media_lis}
