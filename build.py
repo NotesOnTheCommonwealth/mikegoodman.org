@@ -164,7 +164,7 @@ uni = "\n".join(f"<li>{esc(x)}</li>" for x in D["university_service"])
 cv_body = f"""
 <div class="cv-head">
   <h2 class="sec">Curriculum Vitae</h2>
-  <span><a class="btn" href="cv.html" onclick="window.print();return false;">Print / Save PDF</a></span>
+  <span><a class="btn" href="MichaelGoodman-CV.pdf">Download CV (PDF)</a></span>
 </div>
 <div class="cv-grid">
   <nav class="cv-side">
@@ -304,6 +304,7 @@ def main():
         with open(os.path.join(OUT,fname),"w") as f:
             f.write(shell(active,title,body,desc))
     shutil.copytree(os.path.join(ROOT,"assets"), os.path.join(OUT,"assets"))
+    shutil.copy2(os.path.join(ROOT,"MichaelGoodman-CV.pdf"), os.path.join(OUT,"MichaelGoodman-CV.pdf"))
     if os.path.isdir(os.path.join(ROOT,"pubs")):
         shutil.copytree(os.path.join(ROOT,"pubs"), os.path.join(OUT,"pubs"))
     print("built", len(PAGES), "pages ->", OUT)

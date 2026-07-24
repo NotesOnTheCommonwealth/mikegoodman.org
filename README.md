@@ -33,6 +33,10 @@ python3 parse_cv.py ~/Downloads/CV_MichaelDGoodman_Comprehensive_XXXX.docx
 python3 build.py   # then commit and push
 ```
 
+The downloadable CV is the Word-exported PDF, committed as
+`MichaelGoodman-CV.pdf` in the repo root — replace that file (File > Save As >
+PDF in Word) whenever the CV changes, alongside the data refresh.
+
 `parse_cv.py` regenerates all CV-derived data files; it does not touch
 `pdfmap.json`, `linkmap.json`, or `substack.json`. Counts shown on the site
 (media citations, invited talks, reports, articles) are always computed from
