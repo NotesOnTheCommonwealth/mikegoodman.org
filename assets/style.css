@@ -31,7 +31,7 @@ h1.sec:first-child,h2.sec:first-child{margin-top:.4rem}
 h1.sec{margin-top:.4rem}
 p.sec-sub{color:var(--muted);margin:0 0 1.1rem;font-size:.9rem;font-family:Seravek,"Avenir Next",sans-serif}
 .about-grid{display:grid;grid-template-columns:1fr 255px;gap:2.2rem;align-items:start}
-.headshot{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}
+.headshot{width:100%;height:auto;border-radius:4px;display:block;border:1px solid var(--line)}
 .sidecard{font-family:Seravek,"Avenir Next",sans-serif;font-size:.84rem;color:var(--muted);margin-top:.9rem;line-height:1.6}
 .sidecard b{color:var(--ink)}
 .worklist{list-style:none;margin:0;padding:0}
