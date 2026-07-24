@@ -8,14 +8,17 @@ document.querySelectorAll('ul.entries[data-first]').forEach(function(ul){
   btn.className = 'showmore';
   var label = 'Show all ' + items.length + ' →';
   btn.textContent = label;
+  btn.setAttribute('aria-expanded', 'false');
   ul.parentElement.insertBefore(btn, ul.nextSibling);
   btn.addEventListener('click', function(){
     if (ul.querySelector('.hid')) {
       items.forEach(function(li){ li.classList.remove('hid'); });
       btn.textContent = 'Show fewer ↑';
+      btn.setAttribute('aria-expanded', 'true');
     } else {
       items.slice(n).forEach(function(li){ li.classList.add('hid'); });
       btn.textContent = label;
+      btn.setAttribute('aria-expanded', 'false');
     }
   });
 });
@@ -25,9 +28,11 @@ var chipbox = document.getElementById('yrchips');
 if (chipbox) {
   var chips = chipbox.querySelectorAll('.chip');
   chips.forEach(function(c){
+    c.setAttribute('aria-pressed', c.classList.contains('on') ? 'true' : 'false');
     c.addEventListener('click', function(){
-      chips.forEach(function(x){ x.classList.remove('on'); });
+      chips.forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
       c.classList.add('on');
+      c.setAttribute('aria-pressed','true');
       var yr = c.dataset.yr;
       document.querySelectorAll('#medialist li').forEach(function(li){
         li.style.display = (yr === 'all' || li.dataset.yr === yr) ? '' : 'none';

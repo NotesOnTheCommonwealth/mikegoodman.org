@@ -98,18 +98,20 @@ def shell(active, title, body, desc):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="assets/style.css?v={CSS_V}">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="masthead">
   <h1><a href="index.html">Michael D. Goodman, Ph.D.</a></h1>
   <p class="role">Professor of Public Policy &middot; University of Massachusetts Dartmouth</p>
 </div>
 <div class="rule2"></div>
-<nav class="mainnav">
+<nav class="mainnav" aria-label="Primary">
 {nav}
 </nav>
-<main class="page">
+<main class="page" id="main">
 {body}
 </main>
 <footer>&copy; 2026 Michael D. Goodman &middot; mikegoodman.org</footer>
@@ -168,7 +170,7 @@ cv_body = f"""
   <span><a class="btn" href="MichaelGoodman-CV.pdf">Download CV (PDF)</a></span>
 </div>
 <div class="cv-grid">
-  <nav class="cv-side">
+  <nav class="cv-side" aria-label="CV sections">
     <a href="#edu">Education</a>
     <a href="#exp">Experience</a>
     <a href="#awards">Awards &amp; Honors</a>
@@ -246,7 +248,7 @@ media_lis = "\n".join(
 media_body = f"""
 <h2 class="sec">In the Media</h2>
 <p class="sec-sub">{re.sub(r"more than [0-9]+", str(MEDIA_COUNT), esc(media["intro"]), count=1)}</p>
-<div class="chips" id="yrchips">{chip_html}</div>
+<div class="chips" id="yrchips" role="group" aria-label="Filter media appearances by year">{chip_html}</div>
 <ul class="entries" id="medialist" data-first="15">
 {media_lis}
 </ul>"""
@@ -298,9 +300,52 @@ PAGES = {
     "Contact Michael D. Goodman, Professor of Public Policy, UMass Dartmouth."),
 }
 
+REDIRECTS = {"bio.html": "/", "home.html": "/"}   # old Google Sites paths (/contact maps to the real page already)
+
+REDIRECT_TMPL = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Michael D. Goodman, Ph.D.</title>
+<link rel="canonical" href="https://www.mikegoodman.org{target}">
+<meta http-equiv="refresh" content="0; url={target}">
+<script>location.replace("{target}");</script>
+</head>
+<body>
+<p>This page has moved to <a href="{target}">mikegoodman.org</a>.</p>
+</body>
+</html>"""
+
+NOTFOUND = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Michael D. Goodman</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="masthead">
+  <h1><a href="/">Michael D. Goodman, Ph.D.</a></h1>
+  <p class="role">Professor of Public Policy &middot; University of Massachusetts Dartmouth</p>
+</div>
+<div class="rule2"></div>
+<main class="page" id="main">
+  <h2 class="sec">Page Not Found</h2>
+  <p>The page you were looking for isn't here — the site was recently redesigned. You may be looking for:</p>
+  <p><a href="/">About</a> &middot; <a href="/cv.html">Curriculum Vitae</a> &middot; <a href="/publications.html">Publications</a> &middot; <a href="/media.html">In the Media</a> &middot; <a href="/service.html">Public &amp; Board Service</a> &middot; <a href="/contact.html">Contact</a></p>
+</main>
+</body>
+</html>"""
+
 def main():
     if os.path.exists(OUT): shutil.rmtree(OUT)
     os.makedirs(OUT)
+    for fname, target in REDIRECTS.items():
+        with open(os.path.join(OUT, fname), "w") as f:
+            f.write(REDIRECT_TMPL.replace("{target}", target))
+    with open(os.path.join(OUT, "404.html"), "w") as f:
+        f.write(NOTFOUND)
     for fname,(active,title,body,desc) in PAGES.items():
         with open(os.path.join(OUT,fname),"w") as f:
             f.write(shell(active,title,body,desc))
