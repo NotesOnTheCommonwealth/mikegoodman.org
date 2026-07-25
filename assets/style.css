@@ -40,7 +40,7 @@ p.sec-sub{color:var(--muted);margin:0 0 1.1rem;font-size:.9rem;font-family:Serav
 .worklist .w-note{font-family:Seravek,"Avenir Next",sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
 ul.entries{list-style:none;margin:0;padding:0}
 ul.entries li{padding:.55rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:5.4rem 1fr;gap:1.1rem;font-size:.95rem}
-ul.entries li .yr{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;padding-top:.12rem}
+ul.entries li .yr{color:var(--muted);font-variant-numeric:tabular-nums;font-family:Seravek,"Avenir Next",sans-serif;font-size:.85rem;padding-top:.12rem}
 ul.entries.wide li{grid-template-columns:7.5rem 1fr}
 ul.entries.plain li{display:block}
 .venue{color:var(--muted);font-style:italic}
