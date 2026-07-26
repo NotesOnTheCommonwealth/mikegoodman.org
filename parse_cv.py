@@ -117,9 +117,15 @@ def parse(docx_path):
     return data
 
 def main():
-    if len(sys.argv) != 2:
-        sys.exit("usage: python3 parse_cv.py /path/to/CV.docx")
-    data = parse(sys.argv[1])
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if len(args) != 1:
+        sys.exit("usage: python3 parse_cv.py /path/to/CV.docx [--with-media]")
+    data = parse(args[0])
+    if "--with-media" not in sys.argv:
+        # media.json is maintained on the site (ad hoc additions from the master
+        # spreadsheet exceed what the CV carries); only overwrite when asked.
+        data.pop("media", None)
+        print("media: skipped (site copy is canonical; use --with-media to overwrite)")
     for k, v in data.items():
         path = os.path.join(ROOT, "data", k + ".json")
         with open(path, "w") as f:

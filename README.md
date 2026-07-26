@@ -38,7 +38,9 @@ The downloadable CV is the Word-exported PDF, committed as
 PDF in Word) whenever the CV changes, alongside the data refresh.
 
 `parse_cv.py` regenerates all CV-derived data files; it does not touch
-`pdfmap.json`, `linkmap.json`, or `substack.json`. Counts shown on the site
+`pdfmap.json`, `linkmap.json`, `substack.json`, or `media.json` — the site's
+media list is canonical (it carries entries beyond the CV's) and is only
+overwritten if you pass `--with-media`. Counts shown on the site
 (media citations, invited talks, reports, articles) are always computed from
 the number of entries, so they can never drift out of sync.
 
