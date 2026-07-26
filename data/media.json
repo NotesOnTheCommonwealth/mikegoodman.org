@@ -2,12 +2,44 @@
  "intro": "My research and commentary have been cited in more than 680 documented print, online, radio, and television stories since 2002, including sustained coverage in the Boston Globe, State House News Service, Boston Herald, Boston Business Journal, WBUR, and regional outlets across Massachusetts and New England.",
  "items": [
   {
+   "year": "2026",
+   "text": "Ferguson, Grace. “Is South Coast Rail bringing ‘a bunch of rich people’ to New Bedford?” The New Bedford Light, July 9, 2026."
+  },
+  {
+   "year": "2026",
+   "text": "LaForge, James. “Massachusetts was just ranked the best economy in the US. Innovation is a big reason why.” Business Insider, June 18, 2026."
+  },
+  {
+   "year": "2026",
+   "text": "Ferguson, Grace. “One year later, is South Coast Rail delivering on its promises?” The New Bedford Light, March 24, 2026."
+  },
+  {
    "year": "2025",
    "text": "Lisinski, Chris. “'No margin for error': State economic check-in spotlights tricky balancing act.” CommonWealth Beacon, November 11, 2025."
   },
   {
    "year": "2025",
+   "text": "“Massachusetts economy to face slow growth following slew of federal funding cuts.” The Daily Free Press (Boston University), October 7, 2025."
+  },
+  {
+   "year": "2025",
    "text": "“On eve of possible government shutdown, storm clouds darken Massachusetts' fiscal outlook.” Boston Globe, September 30, 2025."
+  },
+  {
+   "year": "2025",
+   "text": "Barraza, Kelly. “Massachusetts: Innovative Spirit in The Commonwealth.” Site Selection Magazine, September 2025."
+  },
+  {
+   "year": "2025",
+   "text": "Ferguson, Grace. “How mass deportations would affect New Bedford’s economy.” The New Bedford Light, February 11, 2025."
+  },
+  {
+   "year": "2024",
+   "text": "“Mass. Officials Pitch Different Audience — Investors.” State House News Service, November 14, 2024."
+  },
+  {
+   "year": "2024",
+   "text": "Johnston, Katie. “‘Our future workforce’: How 41 Haitian migrants solved a Marlborough nonprofit’s staffing shortage.” Boston Globe, October 24, 2024."
   },
   {
    "year": "2023",
@@ -15,11 +47,43 @@
   },
   {
    "year": "2023",
-   "text": "Young, Colin A. “Analysts see tax revenues holding at elevated levels.” State House News Service, January 24, 2023."
+   "text": "Ferguson, Grace. “‘Barely making it’ in New Bedford.” The New Bedford Light, July 12, 2023."
+  },
+  {
+   "year": "2023",
+   "text": "“MassBenchmarks at UMass reports state economy ended year strong but start of 2023 could be flat.” MassLive / The Republican, January 30, 2023."
   },
   {
    "year": "2023",
    "text": "“Analysts see Massachusetts tax revenues holding at elevated levels.” Fall River Reporter (via SHNS), January 25, 2023."
+  },
+  {
+   "year": "2023",
+   "text": "Young, Colin A. “Analysts see tax revenues holding at elevated levels.” State House News Service, January 24, 2023."
+  },
+  {
+   "year": "2022",
+   "text": "Edelman, Larry. “Where are all the workers? The state’s labor force keeps shrinking.” Boston Globe, October 21, 2022."
+  },
+  {
+   "year": "2022",
+   "text": "Ferguson, Grace. “Bristol County rents rising faster than in other large Mass. counties.” The New Bedford Light, August 29, 2022."
+  },
+  {
+   "year": "2022",
+   "text": "Hogan, Colin. “Heat islands create health risks in some New Bedford neighborhoods.” The New Bedford Light, August 3, 2022."
+  },
+  {
+   "year": "2022",
+   "text": "Amer, Yasmin. “In office? Remote? Why many companies are saying yes to both.” WBUR, March 21, 2022."
+  },
+  {
+   "year": "2022",
+   "text": "“A shortage of college students will soon hit the Northeast.” Boston Globe, March 11, 2022."
+  },
+  {
+   "year": "2021",
+   "text": "Sennott, Will. “Gov. Baker activates National Guard as COVID cases rise, Omicron sweeps U.S.” The New Bedford Light, December 21, 2021."
   },
   {
    "year": "2021",
@@ -28,6 +92,30 @@
   {
    "year": "2021",
    "text": "“Mass. economy still growing, but pace shrinks.” WBZ NewsRadio (via SHNS), December 20, 2021."
+  },
+  {
+   "year": "2021",
+   "text": "Ryan, Greg. “State panel OKs Amazon tax break for Charlton site despite concerns.” Boston Business Journal, December 9, 2021."
+  },
+  {
+   "year": "2021",
+   "text": "Brooks, Anthony. “Why Is The Mass. Unemployment Rate Twice As High As N.H.’s?” WBUR, July 14, 2021."
+  },
+  {
+   "year": "2021",
+   "text": "Spillane, Jack. “Battle brewing over future of New Bedford neighborhoods.” The New Bedford Light, June 18, 2021."
+  },
+  {
+   "year": "2021",
+   "text": "Fraga, Brian. “New Bedford renters struggle to find affordable apartments.” The New Bedford Light, June 16, 2021."
+  },
+  {
+   "year": "2021",
+   "text": "Matta, Magdiela. “As Vacationers Return In Full Force, Cape Cod Faces Seasonal Worker Shortage.” WBUR, May 28, 2021."
+  },
+  {
+   "year": "2021",
+   "text": "“Podcast with UMass Dartmouth professor Michael Goodman on affordable housing on the SouthCoast.” Politics New Bedford, March 30, 2021."
   },
   {
    "year": "2020",
@@ -739,11 +827,23 @@
   },
   {
    "year": "2014",
+   "text": "Rios, Simon. “City unemployment notches up with workforce growth.” New Bedford Standard Times, July 23, 2014."
+  },
+  {
+   "year": "2014",
    "text": "Fernandes, Deirdre. “More relying on Walmart for financial services.” Boston Globe, July 10, 2014."
   },
   {
    "year": "2014",
+   "text": "Rios, Simon. “Study finds one in three manufacturers have problems hiring workers.” New Bedford Standard Times, June 26, 2014."
+  },
+  {
+   "year": "2014",
    "text": "Ailworth, Erin. “Manufacturers seeks workers – but in wrong places.” Boston Globe, June 25, 2014."
+  },
+  {
+   "year": "2014",
+   "text": "Rios, Simon. “City unemployment rate dips to 9.2 percent.” New Bedford Standard Times, June 25, 2014."
   },
   {
    "year": "2014",
@@ -776,6 +876,10 @@
   {
    "year": "2014",
    "text": "Dadonna, Patricia. “Goodman to lead UMass Dartmouth policy analysis center.” Providence Business News, May 28, 2014."
+  },
+  {
+   "year": "2014",
+   "text": "Reidy, Chris. “Michael Goodman to take over as director of UMass Dartmouth Center for Policy Analysis.” Boston Globe, May 28, 2014."
   },
   {
    "year": "2014",
@@ -828,6 +932,10 @@
   {
    "year": "2013",
    "text": "Woolhouse, Megan. “Mass jobless rate eclipses the nation.” Boston Globe, December 20, 2013."
+  },
+  {
+   "year": "2013",
+   "text": "Khalid, Asma. “Mass. Jobless Rate Above U.S. Rate For First Time In 6 Years.” WBUR, December 19, 2013."
   },
   {
    "year": "2013",
@@ -1000,6 +1108,10 @@
   {
    "year": "2013",
    "text": "Szaniszlo, Marie. “Boston's mission accomplished?.” Boston Herald, January 26, 2013."
+  },
+  {
+   "year": "2013",
+   "text": "Alix, Laura. “Number of Unbanked, Underbanked Grows.” Banker & Tradesman, January 20, 2013."
   },
   {
    "year": "2013",
@@ -1483,6 +1595,10 @@
   },
   {
    "year": "2011",
+   "text": "Anderson, Charis. “Bay Stater's take on education reform ‘striking’.” New Bedford Standard Times, April 22, 2011."
+  },
+  {
+   "year": "2011",
    "text": "Clark Anika. “Bay Staters still shellshocked by recession.” New Bedford Standard Times, April 21, 2011."
   },
   {
@@ -1747,6 +1863,10 @@
   },
   {
    "year": "2009",
+   "text": "“Mass Economy Chat with Michael Goodman.” Boston.com, October 30, 2009."
+  },
+  {
+   "year": "2009",
    "text": "Fitzgerald, Jay. “UMass report: State still stuck in recession.” Boston Herald, October 29, 2009."
   },
   {
@@ -1764,6 +1884,10 @@
   {
    "year": "2009",
    "text": "Shemkus, Sarah. “Cape Home Values Plunge.” Cape Cod Times (Hyannis), January 7, 2009."
+  },
+  {
+   "year": "2008",
+   "text": "Kinney, Jim. “Heating Oil Costs Climbing.” Republican (Springfield), August 5, http://infoweb.newsbank.com (accessed January 13, 2009)., August 5, 2008."
   },
   {
    "year": "2008",
@@ -1804,10 +1928,6 @@
   {
    "year": "2008",
    "text": "Goodman, Michael. “KAIT 5:00PM.” KAIT (TV - Jonesboro, AR), August 5, 2008."
-  },
-  {
-   "year": "2008",
-   "text": "Kinney, Jim. “Heating Oil Costs Climbing.” Republican (Springfield), August 5, http://infoweb.newsbank.com (accessed January 13, 2009)., August 5, 2008."
   },
   {
    "year": "2008",
@@ -1895,6 +2015,10 @@
   },
   {
    "year": "2007",
+   "text": "Fournier, Paul. “New England to Lag U.S. Growth.” New England Construction, January, 2007. http://proquest.umi.com (accessed January 13, 2009)., January 2007."
+  },
+  {
+   "year": "2007",
    "text": "Cain, Chad. “Economists Say No Recession, but Hard Times Here for Many.” Daily Hampshire Gazette, November 1, 2007."
   },
   {
@@ -1962,10 +2086,6 @@
    "text": "Ross, Kenneth L. “Housing Key to Economy.” Republican (Springfield), February 4, 2007."
   },
   {
-   "year": "2007",
-   "text": "Fournier, Paul. “New England to Lag U.S. Growth.” New England Construction, January, 2007. http://proquest.umi.com (accessed January 13, 2009)., January 2007."
-  },
-  {
    "year": "2006",
    "text": "Crimaldi, Laura. “Housing Burden Grows: Costs Crush Mass. Poor.” Boston Herald, December 13, 2006."
   },
@@ -2008,10 +2128,6 @@
   {
    "year": "2006",
    "text": "Cassidy, Patrick. “Economist Explains Impact of Job Losses, Immigrant Skills on the Economy.” Knight-Ridder Tribune Business News [credit Cape Cod Times (Hyannis)], June 24, 2006."
-  },
-  {
-   "year": "2006",
-   "text": "Adams, Steve. “22,500 New Jobs: State's Economy Gets Boost from May Job Growth.” Patriot Ledger (Quincy), June 23 2006."
   },
   {
    "year": "2006",
@@ -2104,6 +2220,10 @@
   {
    "year": "2006",
    "text": "Kievra, Bob. “Year-end Brake: Fed Hikes, Fuel Prices Keep Lid on Fourth- Quarter Stock Advances.” Telegram & Gazette (Worcester), January 8, 2006."
+  },
+  {
+   "year": "2006",
+   "text": "Adams, Steve. “22,500 New Jobs: State's Economy Gets Boost from May Job Growth.” Patriot Ledger (Quincy), June 23 2006."
   },
   {
    "year": "2005",
